@@ -1,0 +1,116 @@
+commit 413117ef11ac061285a4eaf28fd09eaf2cd56f95
+Author: lchz <chenhui_zhao@outlook.com>
+Date:   Mon Mar 19 15:16:54 2018 +0200
+
+    file1 poisto ja file2 -> file22
+
+ tiedostoja/file1  | 0
+ tiedostoja/file2  | 0
+ tiedostoja/file22 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 38dde7199e0b50c48e25fce80123cab35cd478c0
+Author: lchz <chenhui_zhao@outlook.com>
+Date:   Mon Mar 19 15:12:41 2018 +0200
+
+    tiedostoja luotu
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 4461c7521d65427a612276267c6855afa12dc13d
+Author: lchz <chenhui_zhao@outlook.com>
+Date:   Mon Mar 19 15:04:03 2018 +0200
+
+    muutoksia ekaan ja kolmanteen
+
+ eka.txt    | 10 +++++++++-
+ kolmas.txt | 10 +++++++++-
+ 2 files changed, 18 insertions(+), 2 deletions(-)
+
+commit bb3aaccf986080c4eb6c0eb67e77af25aa47e6eb
+Author: lchz <chenhui_zhao@outlook.com>
+Date:   Mon Mar 19 14:41:27 2018 +0200
+
+    uudelleennimentä tiedostosta ekaksi
+
+ eka.txt      | 68 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ tiedosto.txt | 68 ------------------------------------------------------------
+ 2 files changed, 68 insertions(+), 68 deletions(-)
+
+commit 9de3a6c40142f8b4670c40f77abd5709cfa093af
+Author: lchz <chenhui_zhao@outlook.com>
+Date:   Mon Mar 19 14:40:01 2018 +0200
+
+    toinen.txt poistettu
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 01b054542905ef62ac7998cf4a67035715b3a005
+Author: lchz <chenhui_zhao@outlook.com>
+Date:   Sun Mar 18 19:29:47 2018 +0200
+
+    muutoksia tiedostoon
+
+ tiedosto.txt | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit 0ae913a0fcdbfe70e1b60d9487d9325abe1fe4b4
+Author: lchz <chenhui_zhao@outlook.com>
+Date:   Sun Mar 18 19:28:19 2018 +0200
+
+    lisäys tiedostoon
+
+ tiedosto.txt | 68 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 68 insertions(+)
+
+commit 6c54b859b8db362ab6aca1fa4b01f1fa2d2aacaa
+Author: lchz <chenhui_zhao@outlook.com>
+Date:   Sun Mar 18 19:14:34 2018 +0200
+
+    hakemisto stuff ja stuff.txt luotu
+
+ stuff/stuff.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit c8f602e6d86cd7fb8529c32d4e8de8524c0fd817
+Author: lchz <chenhui_zhao@outlook.com>
+Date:   Sun Mar 18 19:12:39 2018 +0200
+
+    lisäys toiseen ja kolmanteen
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit cbcb03fd4440e3cfd47cbfc395295ce066e8cf16
+Author: lchz <chenhui_zhao@outlook.com>
+Date:   Sun Mar 18 19:10:58 2018 +0200
+
+    kolmas luotu
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 2f299be26982914d6b0c762179b92525da234534
+Author: lchz <chenhui_zhao@outlook.com>
+Date:   Sun Mar 18 19:05:53 2018 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 48dbdb13527b4cc39388cfb5889111257daea484
+Author: lchz <chenhui_zhao@outlook.com>
+Date:   Sun Mar 18 18:59:16 2018 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
