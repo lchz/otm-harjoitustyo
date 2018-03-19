@@ -1,4 +1,4 @@
-#Aikataulu#
+#Aikataulu
 
 **viikko 1**
 Palautuksen deadline *ti 20.3. klo 23:59*
