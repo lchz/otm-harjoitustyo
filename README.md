@@ -1,3 +1,4 @@
+
 # OTM-harjoitystyö
 
 ## Aikataulut
@@ -22,3 +23,5 @@
 
 * [komentorivi.txt](https://github.com/lchz/otm-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
+## Ohjeita
+* Kaikki ohjeista eivät ole kurssin alussa vielä ajankohtaisia. Kaikkeen tärkeään tulee aikanaan linkki laskareihin tai harjoitustöiden viikkotavoitteisiin
