@@ -1,4 +1,3 @@
-
 # OTM-harjoitystyö
 
 ## Aikataulut
@@ -25,3 +24,5 @@
 
 ## Ohjeita
 * Kaikki ohjeista eivät ole kurssin alussa vielä ajankohtaisia. Kaikkeen tärkeään tulee aikanaan linkki laskareihin tai harjoitustöiden viikkotavoitteisiin
+* Kurssin referenssisovellus OtmTodoApp
+	* Sovelluksen tarkoituksena on demonstroida erästä tapaa tehdä suurin piirtein täysiin pisteisiin riittävä dokumentaatio ja testaus projektillesi. Itse ohjelma on sen verran suppea, että saadaksesi kurssilta arvosanan 5 joudut tekemään hieman laajemman sovelluksen.
