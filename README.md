@@ -5,15 +5,12 @@
 **Viikko 1**
 
 * [gitlog.txt](https://github.com/lchz/otm-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
-
 * [komentorivi.txt](https://github.com/lchz/otm-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
 **Viikko 2**
 
 * [Maksukortti](https://github.com/lchz/otm-harjoitustyo/tree/master/laskarit/viikko2/Maksukortti) 
-
 * [Unicafe](https://github.com/lchz/otm-harjoitustyo/tree/master/laskarit/viikko2/Unicafe)
-
 * [Testkattavuus](https://github.com/lchz/otm-harjoitustyo/blob/master/laskarit/viikko2/Testikattavuus.png)
 
 ## Aikataulu
