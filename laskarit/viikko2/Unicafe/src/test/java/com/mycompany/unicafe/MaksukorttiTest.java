@@ -15,7 +15,7 @@ public class MaksukorttiTest {
 
     @Test
     public void luotuKorttiOlemassa() {
-        assertTrue(kortti!=null);      
+        assertTrue(kortti!=null);   
     }
     
     @Test
@@ -47,8 +47,9 @@ public class MaksukorttiTest {
         assertTrue(riittava == false);
     }
     
-//    @Test
-//    public void onkoRiittavaRaha() {
-//        kortt
-//    }
+    @Test
+    public void saldoAlussaOikein() {
+        
+        assertEquals(10, kortti.saldo());
+    }
 }
