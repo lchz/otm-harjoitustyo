@@ -4,10 +4,10 @@
 
 **Viikko 2**
 
-* [Maksukortti](https://github.com/lchz/otm-harjoitustyo/tree/master/laskarit/v$
-* [Unicafe](https://github.com/lchz/otm-harjoitustyo/tree/master/laskarit/viikk$
-* [Testkattavuus](https://github.com/lchz/otm-harjoitustyo/blob/master/laskarit$
-* [Harjoitustyö](https://github.com/lchz/otm-harjoitustyo/tree/master/Kurssien_$
+* [Maksukortti](https://github.com/lchz/otm-harjoitustyo/tree/master/laskarit/viikko2/Maksukortti)
+* [Unicafe](https://github.com/lchz/otm-harjoitustyo/tree/master/laskarit/viikko2/Unicafe)
+* [Testikattavuus](https://github.com/lchz/otm-harjoitustyo/blob/master/laskarit/viikko2/Testikattavuus.png)
+* [Harjoitustyö](https://github.com/lchz/otm-harjoitustyo/tree/master/Kurssien_seurantajarjestelma)
 
 **Viikko 1**
 
