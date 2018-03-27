@@ -1,2 +1,2 @@
-*Vaatimusmäärittely**
+*Vaatimusmäärittely*
 **Soveluksen tarkoitus**
