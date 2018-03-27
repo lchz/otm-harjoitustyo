@@ -2,6 +2,6 @@
 
 ## Dokumentaatio
 
-[Vaatimusmäärittely](https://github.com/lchz/otm-harjoitustyo/blob/master/Opintojen_seurantajarjestelma/dokumentaatio/vaatimusmaarittely.md)
+[Vaatimusmäärittely](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/vaatimusmaarittely.md)
 
-[Työaikakirjanpito](https://github.com/lchz/otm-harjoitustyo/blob/master/Opintojen_seurantajarjestelma/dokumentaatio/tyoaikakirjanpito.md)
+[Työaikakirjanpito](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/tyoaikakirjanpito.md)
