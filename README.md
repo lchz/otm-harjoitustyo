@@ -4,7 +4,7 @@
 
 **Viikko 3**
 
-[Luokkakaaviot ja sekvenssikaaviot](https://github.com/lchz/otm-harjoitustyo/tree/master/laskarit/viikko3)
+* [Luokkakaaviot ja sekvenssikaaviot](https://github.com/lchz/otm-harjoitustyo/tree/master/laskarit/viikko3)
 
 **Viikko 2**
 
