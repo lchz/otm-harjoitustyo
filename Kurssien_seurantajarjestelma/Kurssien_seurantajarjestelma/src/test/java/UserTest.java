@@ -41,10 +41,5 @@ public class UserTest {
         assertTrue(u1.equals(u5));
     }
     
-//    @Test
-//    public void nonEqualWhenDifferentUsername() {
-//        
-//    }
-    
 }
 
