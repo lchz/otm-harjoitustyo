@@ -2,6 +2,10 @@
 
 ## Tehtävät
 
+**Viikko 3**
+
+[Luokkakaaviot ja sekvenssikaaviot](https://github.com/lchz/otm-harjoitustyo/tree/master/laskarit/viikko3)
+
 **Viikko 2**
 
 * [MaksukorttiTest](https://github.com/lchz/otm-harjoitustyo/blob/master/laskarit/viikko2/Maksukortti/test/MaksukorttiTest.java)
@@ -15,6 +19,12 @@
 * [komentorivi.txt](https://github.com/lchz/otm-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
 ## Aikataulu
+
+**viikko3**
+
+Palautuksen deadline ti 10.4. klo 23:59
+* Harjoitustyön koodin runko valmiina (2p)
+* Luokka- ja sekvenssikaaviot (1p)
 
 **viikko 2**
 
