@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
@@ -21,7 +22,7 @@ import otm.kurssien_seurantajarjestelma.dao.FileUserDao;
 import otm.kurssien_seurantajarjestelma.domain.Course;
 import otm.kurssien_seurantajarjestelma.domain.CourseService;
 
-public class jarjestelmaUi extends Application {
+public class JarjestelmaUi extends Application {
     private CourseService courseService;
     
     private Scene courseScene;
@@ -45,42 +46,13 @@ public class jarjestelmaUi extends Application {
         courseService = new CourseService(courseDao, userDao);
     }
     
-    public Node createCourseNode(Course course) {
-        HBox box = new HBox(10);
-        Label label = new Label(course.getContent());
-        label.setMinHeight(30);
-        
-        Button button = new Button("finished");
-        button.setOnAction(e -> {
-            courseService.markFinished(course.getId());
-            redrawCourselist();
-        });
-        
-        Region spacer = new Region();
-        HBox.setHgrow(spacer, Priority.ALWAYS);
-        box.setPadding(new Insets(0, 5, 0, 5));
-        
-        box.getChildren().addAll(label, spacer, button);
-        return box;
-    }
-    
-    public void redrawCourselist() {
-        courseNodes.getChildren().clear();
-        
-        List<Course> unfinishedCourses = courseService.getUnfinished();
-        unfinishedCourses.forEach(c -> {
-            courseNodes.getChildren().add(createCourseNode(c));
-        });
-    }
-    
-    
-    
     @Override
     public void start(Stage primaryStage) throws Exception {
         //login scene
         
         VBox loginPane = new VBox(10);
-        HBox inputPane = new HBox(10);
+        HBox inputPane1 = new HBox(10);
+        HBox inputPane2 = new HBox(10);
         loginPane.setPadding(new Insets(10));
         
         Label loginLabel = new Label("username");
@@ -88,40 +60,26 @@ public class jarjestelmaUi extends Application {
         Label passwordLabel = new Label("password");
         TextField passwordInput = new TextField();
         
-        inputPane.getChildren().addAll(loginLabel, usernameInput, passwordLabel, passwordInput);
+        inputPane1.getChildren().addAll(loginLabel, usernameInput);
+        inputPane2.getChildren().addAll(passwordLabel, passwordInput);
+        
+        loginPane.getChildren().addAll(inputPane1, inputPane2);
+        
         Label loginMessage = new Label();
+        
+        VBox buttons = new VBox(10);
         
         Button loginButton = new Button("login");
         Button createButton = new Button("create new user");
-        loginButton.setOnAction(e -> {
-            String username = usernameInput.getText();
-            String password = passwordInput.getText();
-            
-            menuLabel.setText(username + " logged in...");
-            
-            if(courseService.login(username, password)) {
-                loginMessage.setText("");
-                redrawCourselist();
-                primaryStage.setScene(courseScene);
-                usernameInput.setText("");
-                passwordInput.setText("");
-                
-            } else {
-                loginMessage.setText("user does not exist");
-                loginMessage.setTextFill(Color.RED);
-            }
-        });
+
+        buttons.getChildren().addAll(loginButton, createButton);
         
-        createButton.setOnAction(e -> {
-            usernameInput.setText("");
-            primaryStage.setScene(newUserScene);
-        });
-        
-        loginPane.getChildren().addAll(loginMessage, inputPane, loginButton, createButton);
-        
-        loginScene = new Scene(loginPane, 300, 250);
-        
-        
+        FlowPane kompo = new FlowPane();
+        kompo.getChildren().addAll(loginPane, buttons);
+        Scene nakyma1 = new Scene(kompo, 300, 200);
+
+        primaryStage.setScene(nakyma1);
+        primaryStage.show();
     }
     
     @Override
@@ -131,7 +89,7 @@ public class jarjestelmaUi extends Application {
     }
     
     public static void main(String[] args) {
-        launch(args);
+        launch(JarjestelmaUi.class);
     }
     
 }
