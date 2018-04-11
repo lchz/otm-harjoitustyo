@@ -1,6 +1,5 @@
-
-/Kurssien_seurantajarjestelma/target/
-/Kurssien_seurantajarjestelmanbproject/
+target/
+nbproject/
 /Kurssien_seurantajarjestelma/nbactions.xml
 courses.txt
 nbactions.xml
