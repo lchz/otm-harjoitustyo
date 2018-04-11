@@ -20,7 +20,16 @@
 
 ## Aikataulu
 
-**viikko3**
+**viikko 4**
+
+Palautuksen deadline ti 17.4. klo 23:59
+* Harjoitustyö (3p)
+	* Ohjelman perustoiminnallisuus
+	* Testien aloitus
+	* Alustava rakenne luokkakaaviona
+	* Checkstyle otettu käyttöön
+
+**viikko 3**
 
 Palautuksen deadline ti 10.4. klo 23:59
 * Harjoitustyön koodin runko valmiina (2p)
