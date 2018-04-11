@@ -1,6 +1,6 @@
 target/
 nbproject/
-/Kurssien_seurantajarjestelma/nbactions.xml
+nbactions.xml
 courses.txt
 nbactions.xml
 users.txt
