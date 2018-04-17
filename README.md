@@ -1,6 +1,8 @@
 # OTM-harjoitystyö
+## Harjoitustyö
+[Kurssien seurantajärjestelmä](https://github.com/lchz/otm-harjoitustyo/tree/master/Kurssien_seurantajarjestelma)
 
-## Tehtävät
+## Laskarit
 
 **Viikko 3**
 
@@ -17,35 +19,3 @@
 
 * [gitlog.txt](https://github.com/lchz/otm-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
 * [komentorivi.txt](https://github.com/lchz/otm-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
-
-## Aikataulu
-
-**viikko 4**
-
-Palautuksen deadline ti 17.4. klo 23:59
-* Harjoitustyö (3p)
-	* Ohjelman perustoiminnallisuus
-	* Testien aloitus
-	* Alustava rakenne luokkakaaviona
-	* Checkstyle otettu käyttöön
-
-**viikko 3**
-
-Palautuksen deadline ti 10.4. klo 23:59
-* Harjoitustyön koodin runko valmiina (2p)
-* Luokka- ja sekvenssikaaviot (1p)
-
-**viikko 2**
-
-Palautuksen deadline ti 27.3. klo 23:59
-* Harjoitustyön aiheen alustava määrittelydokumentti (1p)
-* JUnit-harjoittelu (2p)
-* Oman projektin koodaus alkaa
-
-**viikko 1**
-
-Palautuksen deadline ti 20.3. klo 23:59
-
-* Maanantaina 12.3. klo 14-16 kurssin ainoa luento A111
-* Komentorivi- ja Git-harjoittelu (2p)
-* Tehtävien palautus tapahtuu tekemällä repositorio githubiin ja rekisteröitymällä labtooliin
