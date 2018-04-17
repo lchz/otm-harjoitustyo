@@ -6,4 +6,6 @@ päivä | aika | mitä tein
 6.4 | 2 | pakkaus domain luotu
 9.4 | 3 | pakkaus dao luotu
 10.4 | 4 | lisäyksiä ja korjauksia pakkaukseen ui, muutamia testeja UserTestiin, korjauksia pomiin 
-11.4 | 1.5 | muutoksia repositorioon
+11.4 | 1.5 | koodien muutoksia ja lisäyksiä repositorioon
+17.4 | 0.5 | osa toiminnallisuuksia nappiin login
+     | 1.0 | toiminnallisuudet nappiin create new user
