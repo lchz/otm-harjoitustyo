@@ -9,4 +9,4 @@ päivä | aika | mitä tein
 11.4 | 1.5 | koodien muutoksia ja lisäyksiä repositorioon
 17.4 | 0.5 | osa toiminnallisuuksia nappiin login
 17.4 | 1.0 | toiminnallisuudet nappiin create new user
-17.4 | 3 | dokumenttien päivityksiä, aloin tutustua jarin luomiseen
+17.4 | 2.5 | dokumenttien päivityksiä, aloin tutustua jarin luomiseen
