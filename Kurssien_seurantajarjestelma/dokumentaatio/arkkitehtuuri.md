@@ -1,6 +1,6 @@
 # Arkkitehtuurikuvaus
 
-## Sovellyslogiikka
+## Sovelluslogiikka
 
 Sovelluksen loogisen datamallin muodostavat luokat [User](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/src/main/java/otm/kurssien_seurantajarjestelma/domain/User.java) ja [Course](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/src/main/java/otm/kurssien_seurantajarjestelma/domain/Course.java), jotka kuvaavat käyttäjiä ja käyttäjien kursseja:
 
