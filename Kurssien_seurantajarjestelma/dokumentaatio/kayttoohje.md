@@ -13,7 +13,7 @@ Sovellus käynnistyy kirjautumisnäkymään:
 
 ![kuva kirjautumisnäkymästä](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/kuvat/kirjautumisnakyma.png)
 
-Kirjautuminen onnistuu kirjoittamalla olemassaoleva käyttäjätunnus ja salasana syötekänttiin ja painamalla _Login_.
+Kirjautuminen onnistuu kirjoittamalla olemassaoleva käyttäjätunnus ja salasana syötekenttiin ja painamalla _Login_.
 
 ## Uuden käyttäjän luominen
 
