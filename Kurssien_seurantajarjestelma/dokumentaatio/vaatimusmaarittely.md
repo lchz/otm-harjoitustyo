@@ -11,7 +11,7 @@ Alkuvaiheessa sovelluksella on ainoastaan yksi käyttäjärooli eli _opiskelija_
 
 Sovellus koostuu neljästä eri näkymästä
 
-![kuva käyttöliittymäluonnoksesta](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/kuvat/kayttoliittymaluonnos.jpg)
+![kuva käyttöliittymäluonnoksesta](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/kuvat/kayttoliittymaluonnos.jpg)
 
 Sovellus aukeaa kirjautumisnäkymään, josta on mahdollista siirtyä uuden käyttäjän luomisnäkymään, onnistuneen kirjautumisen yhteydessä kirjaantuneen käyttäjän kurssilistaan, tai kaytyjen kurssien näkymään. 
 
