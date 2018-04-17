@@ -20,11 +20,11 @@ Sovelluksen avulla käyttäjien on mahdollista pitää kirjaa päättymättömis
 
 Testit suoritetaan komennolla
 
- mvn test
+	- mvn test
 
 Testikattavuusraportti luodaan komennolla
 
- mvn jacoco:report
+	-mvn jacoco:report
 
 Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto _target/site/jacoco/index.html_
 
@@ -32,7 +32,7 @@ Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto _target/site/ja
 
 Komento
 
- mvn package
+	-mvn package
 
 generoi hakemistoon _target_ suoritettavan jar-tiedoston ????
 
@@ -40,6 +40,6 @@ generoi hakemistoon _target_ suoritettavan jar-tiedoston ????
 
 Tiedostoon checkstyle.sml määrittelemät tarkistukset suoritetaan komennolla
 
- mvn jxr:jxr checkstyle:checkstyle
+	-mvn jxr:jxr checkstyle:checkstyle
 
 Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto _target/site/checkstyle.html_
