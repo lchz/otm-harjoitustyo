@@ -21,4 +21,6 @@ Kirjautumiskäkymästä voi siirtyä uuden käyttäjän luomisnäkymään painam
 
 Uusi käyttäjä luodaan syöttämällä oikeanmuotoiset tiedot syötekenttiin ja painamalla _create_.
 
-![kuva uuden käyttäjän luomisesta]()
+![kuva uuden käyttäjän luomisesta](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/kuvat/uudenkayttajanluominen.png)
+
+Jos käyttäjän luominen onnistuu, palataan kirjautumisnäkymään.
