@@ -106,7 +106,7 @@ public class CourseService {
      * @return true jos kurssien lisääminen onnistunut
      */
     
-    public boolean createCourse(String content) {
+    public boolean createCourse(String content, User user) {
         Course course = new Course(content, loggedIn);
 
         try {
