@@ -49,7 +49,7 @@ public class Course {
     
     @Override
     public boolean equals(Object obj) {
-        if(!(obj instanceof Course)) {
+        if (!(obj instanceof Course)) {
             return false;
         }
         

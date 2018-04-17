@@ -8,7 +8,7 @@ import java.util.Scanner;
 import otm.kurssien_seurantajarjestelma.domain.Course;
 import otm.kurssien_seurantajarjestelma.domain.User;
 
-public class FileCourseDao implements CourseDao{
+public class FileCourseDao implements CourseDao {
     public List<Course> courses;
     private String file;
     
@@ -38,9 +38,9 @@ public class FileCourseDao implements CourseDao{
         }
     }
     
-    private void save() throws Exception{
-        try(FileWriter writer = new FileWriter(new File(file))) {
-            for(Course course: courses) {
+    private void save() throws Exception {
+        try (FileWriter writer = new FileWriter(new File(file))) {
+            for (Course course: courses) {
                 writer.write(course.getId() + ";" + 
                              course.getContent() + ";" + 
                              course.isFinished() + ";" + 

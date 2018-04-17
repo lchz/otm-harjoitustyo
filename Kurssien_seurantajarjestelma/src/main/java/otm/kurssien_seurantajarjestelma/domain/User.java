@@ -41,12 +41,12 @@ public class User {
     
     @Override
     public boolean equals(Object obj) {
-        if(!(obj instanceof User)) {
+        if (!(obj instanceof User)) {
             return false;
         }
         
         User u = (User) obj;
-        return this.username.equals(u.username) || this.name.equals(u.name)||
+        return this.username.equals(u.username) || this.name.equals(u.name) || 
                 this.email.equals(u.email) || this.password.equals(u.password);
         
     }
