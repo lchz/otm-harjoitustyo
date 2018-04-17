@@ -3,9 +3,9 @@
 
 Ohjelma olettaa, että sen käynnistyshakemistossa on konfiguraatiotiedosto config.properties, joka määrittelee käyttäjät ja todot tallettavien tiedostojen nimet. Tiedoston muoto on seuraava
 
-userFile=users.txt
+  userFile=users.txt
 
-todoFile=todos.txt
+  todoFile=todos.txt
 
 ## Kirjautuminen
 
