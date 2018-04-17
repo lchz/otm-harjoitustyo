@@ -9,7 +9,9 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
@@ -55,9 +57,9 @@ public class JarjestelmaUi extends Application {
         HBox inputPane2 = new HBox(10);
         loginPane.setPadding(new Insets(10));
         
-        Label loginLabel = new Label("username");
+        Label loginLabel = new Label("Username");
         TextField usernameInput = new TextField();
-        Label passwordLabel = new Label("password");
+        Label passwordLabel = new Label("Password");
         TextField passwordInput = new TextField();
         
         inputPane1.getChildren().addAll(loginLabel, usernameInput);
@@ -69,17 +71,142 @@ public class JarjestelmaUi extends Application {
         
         VBox buttons = new VBox(10);
         
-        Button loginButton = new Button("login");
-        Button createButton = new Button("create new user");
+        Button loginButton = new Button("Login");
+        Button createButton = new Button("Create new user");
 
         buttons.getChildren().addAll(loginButton, createButton);
         
         FlowPane kompo = new FlowPane();
-        kompo.getChildren().addAll(loginPane, buttons);
-        Scene nakyma1 = new Scene(kompo, 300, 200);
-
-        primaryStage.setScene(nakyma1);
+        kompo.getChildren().addAll(loginMessage, loginPane, buttons);
+        loginScene = new Scene(kompo, 300, 200);
+        
+        loginButton.setOnAction(e -> {
+            String username = usernameInput.getText();
+            String password = passwordInput.getText();
+            
+            menuLabel.setText(username + " logged in ...");
+            
+            if(courseService.login(username, password)) {
+                loginMessage.setText("");
+                redrawCourselist();
+                primaryStage.setScene(courseScene);
+                usernameInput.setText("");
+                passwordInput.setText("");
+                
+            } else {
+                loginMessage.setText("Wrong username or password.");
+                loginMessage.setTextFill(Color.RED);
+            }
+        });
+        
+        createButton.setOnAction(e -> {
+            usernameInput.setText("");
+            primaryStage.setScene(newUserScene);
+        });
+        
+        //Create new user
+        
+        VBox newUserPane = new VBox(10);
+        
+        HBox newUsernamePane = new HBox(10);
+        newUsernamePane.setPadding(new Insets(10));
+        TextField newUsernameInput = new TextField();
+        Label newUsernameLabel = new Label("Username:");
+        newUsernamePane.getChildren().addAll(newUsernameLabel, newUsernameInput);
+        
+        HBox newNamePane = new HBox(10);
+        newNamePane.setPadding(new Insets(10));
+        TextField newNameInput = new TextField();
+        Label newNameLabel = new Label("Name:");
+        newNamePane.getChildren().addAll(newNameLabel, newNameInput);
+        
+        HBox newPasswordPane = new HBox(10);
+        newPasswordPane.setPadding(new Insets(10));
+        TextField newPasswordInput = new TextField();
+        Label newPasswordLabel = new Label("Password:");
+        newPasswordPane.getChildren().addAll(newPasswordLabel, newPasswordInput);
+        
+        HBox newEmailPane = new HBox(10);
+        newEmailPane.setPadding(new Insets(10));
+        TextField newEmailInput = new TextField();
+        Label newEmailLabel = new Label("E-mail:");
+        newEmailPane.getChildren().addAll(newEmailLabel, newEmailInput);
+        
+        Label userCreationMessage = new Label();
+        
+        Button createNewUserButton = new Button("create");
+        createNewUserButton.setPadding(new Insets(10));
+        
+        createNewUserButton.setOnAction(e -> {
+            String username = newUsernameInput.getText();
+            String name = newNameInput.getText();
+            String password = newPasswordInput.getText();
+            String email = newEmailInput.getText();
+            
+            if(username.length() < 3) {
+                userCreationMessage.setText("Username has to be at least 3 marks");
+                userCreationMessage.setTextFill(Color.RED);
+            } else if(password.length() < 6) {
+                userCreationMessage.setText("Password has to be at least 6 marks");
+                userCreationMessage.setTextFill(Color.RED);
+            } else if(password.toLowerCase().contains("ä") || password.toLowerCase().contains("ö") || password.toLowerCase().contains("å")) {
+                userCreationMessage.setText("Password cannot contain ä, ö or å");
+                userCreationMessage.setTextFill(Color.RED);
+            } else if(username.toLowerCase().contains("ä") || username.toLowerCase().contains("ö") || username.toLowerCase().contains("å")) {
+                userCreationMessage.setText("Username cannot contain ä, ö or å");
+                userCreationMessage.setTextFill(Color.RED);
+            } else if(!email.contains("@")) {
+                userCreationMessage.setText("E-mail is not correct.");
+                userCreationMessage.setTextFill(Color.RED);
+            } else if(courseService.createUser(username, name, email, password)) {
+                userCreationMessage.setText("");
+                loginMessage.setText("new user created");
+                loginMessage.setTextFill(Color.GREEN);
+                primaryStage.setScene(loginScene);
+            } else {
+                userCreationMessage.setText("User has already existed or username has to be unique.");
+                userCreationMessage.setTextFill(Color.RED);
+            }
+        });
+        
+        newUserPane.getChildren().addAll(userCreationMessage, newUsernamePane, newNamePane, newEmailPane, newPasswordPane, createNewUserButton);
+        
+        newUserScene = new Scene(newUserPane, 300, 350);
+        
+        //main scene
+        ScrollPane courseScrollbar = new ScrollPane();
+        BorderPane mainPane = new BorderPane(courseScrollbar);
+        courseScene = new Scene(mainPane, 300, 250);
+        
+        primaryStage.setScene(loginScene);
         primaryStage.show();
+    }
+    
+    public Node createCourseNode(Course course) {
+        HBox box = new HBox(10);
+        Label label  = new Label(course.getContent());
+        label.setMinHeight(28);
+        Button button = new Button("finnished");
+        button.setOnAction(e->{
+            courseService.markFinished(course.getId());
+            redrawCourselist();
+        });
+                
+        Region spacer = new Region();
+        HBox.setHgrow(spacer, Priority.ALWAYS);
+        box.setPadding(new Insets(0,5,0,5));
+        
+        box.getChildren().addAll(label, spacer, button);
+        return box;
+    }
+    
+    public void redrawCourselist() {
+        courseNodes.getChildren().clear();     
+
+        List<Course> undoneCourses = courseService.getUnfinished();
+        undoneCourses.forEach(course->{
+            courseNodes.getChildren().add(createCourseNode(course));
+        });
     }
     
     @Override
