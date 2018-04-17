@@ -1,5 +1,7 @@
 # Kurssien seurantajärjestelmä
 
+Sovelluksen avulla käyttäjien on mahdollista pitää kirjaa päättymättömistään kursseista. Sovellusta on mahdollista käyttää useamman rekisteröityneen käyttäjän, joilla kaikilla on oma yksilöllinen kurssilistansa.
+
 ## Dokumentaatio
 
 [Vaatimusmäärittely](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/vaatimusmaarittely.md)
