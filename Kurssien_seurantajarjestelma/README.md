@@ -16,6 +16,12 @@ Sovelluksen avulla käyttäjien on mahdollista pitää kirjaa päättymättömis
 
 ## Komentorivitoiminnot
 
+### Projektin suorittaminen
+
+Projektin koodin pystyy suorittamaan komennolla
+
+	mvn compile exec:java -Dexec.mainClass=otm.kurssien_seurantajarjestelma.ui.JarjestelmaUi
+
 ### Testaus
 
 Testit suoritetaan komennolla
@@ -27,14 +33,6 @@ Testikattavuusraportti luodaan komennolla
 	mvn jacoco:report
 
 Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto _target/site/jacoco/index.html_
-
-### Suoritettavan jarin generointi
-
-Komento
-
-	mvn package
-
-generoi hakemistoon _target_ suoritettavan jar-tiedoston ????
 
 ### Checkstyle
 
