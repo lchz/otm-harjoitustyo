@@ -13,4 +13,12 @@ Sovellus käynnistyy kirjautumisnäkymään:
 
 ![kuva kirjautumisnäkymästä](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/kuvat/kirjautumisnakyma.png)
 
+Kirjautuminen onnistuu kirjoittamalla olemassaoleva käyttäjätunnus ja salasana syötekänttiin ja painamalla _Login_.
 
+## Uuden käyttäjän luominen
+
+Kirjautumiskäkymästä voi siirtyä uuden käyttäjän luomisnäkymään painamalla _create new user_.
+
+Uusi käyttäjä luodaan syöttämällä oikeanmuotoiset tiedot syötekenttiin ja painamalla _create_.
+
+![kuva uuden käyttäjän luomisesta]()
