@@ -11,6 +11,6 @@ todoFile=todos.txt
 
 Sovellus käynnistyy kirjautumisnäkymään:
 
-![kuva kirjautumisnäkymästä](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/kuvat/kirjautumisnakyma.png)
+![kuva kirjautumisnäkymästä](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/kuvat/kirjautumisnakyma.png)
 
 
