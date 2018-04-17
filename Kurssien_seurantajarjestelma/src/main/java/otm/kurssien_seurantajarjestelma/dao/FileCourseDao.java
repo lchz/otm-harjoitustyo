@@ -23,9 +23,10 @@ public class FileCourseDao implements CourseDao{
                 int id = Integer.parseInt(parts[0]);
                 boolean finished = Boolean.parseBoolean(parts[2]);
                 
-                User user = users.getAll().stream()
-                                .filter(u -> u.getUsername().equals(parts[3]))
-                                .findFirst().orElse(null);
+                User user = users.getAll()
+                                 .stream()
+                                 .filter(u -> u.getUsername()
+                                 .equals(parts[3])).findFirst().orElse(null);
                 
                 Course course = new Course(id, parts[1], finished, user);
                 this.courses.add(course);
@@ -46,6 +47,10 @@ public class FileCourseDao implements CourseDao{
                              course.getUser().getUsername() + 
                              course.getUser().getName() + "\n");
             }
+            
+        } catch (Exception e) {
+            FileWriter writer = new FileWriter(new File(file));
+            writer.close();
         }
     }
     
@@ -69,11 +74,9 @@ public class FileCourseDao implements CourseDao{
 
     @Override
     public void setFinished(int id) throws Exception {
-        for(Course c: courses) {
-            if(c.getId() == id) {
-                c.setFinished();
-            }
-        }
+        courses.stream().filter((c) -> (c.getId() == id)).forEachOrdered((c) -> {
+            c.setFinished();
+        });
         
         save();
     }

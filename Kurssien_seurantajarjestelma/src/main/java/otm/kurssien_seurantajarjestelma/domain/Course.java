@@ -3,6 +3,7 @@ package otm.kurssien_seurantajarjestelma.domain;
 /*
     Yksittäistä kurssia kuvaava luokka
 */
+
 public class Course {
     private int id;
     private String content;
@@ -55,4 +56,5 @@ public class Course {
         Course k = (Course) obj;
         return id == k.id;
     }
+    
 }

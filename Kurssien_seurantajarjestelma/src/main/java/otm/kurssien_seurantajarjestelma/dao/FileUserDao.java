@@ -19,7 +19,7 @@ public class FileUserDao implements UserDao {
         try {
             Scanner reader = new Scanner(new File(file));
             while (reader.hasNextLine()) {
-                String[] parts = reader.nextLine().split(",");
+                String[] parts = reader.nextLine().split("; ");
                 User u = new User(Integer.parseInt(parts[0]), parts[1], parts[2], parts[3], parts[4]);
                 users.add(u);
             }
@@ -33,12 +33,16 @@ public class FileUserDao implements UserDao {
     private void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (User user : users) {
-                writer.write(user.getId() + ";"
-                        + user.getName() + ";"
-                        + user.getUsername() + ";"
-                        + user.getEmail() + ";"
+                writer.write(user.getId() + "; "
+                        + user.getName() + "; "
+                        + user.getUsername() + "; "
+                        + user.getEmail() + "; "
                         + user.getPassword() + "\n");
             }
+            
+        } catch (Exception e) {
+            FileWriter writer = new FileWriter(new File(file));
+            writer.close();
         }
     }
     
@@ -59,18 +63,17 @@ public class FileUserDao implements UserDao {
     @Override
     public User findByUsername(String username) {
         return users.stream()
-                .filter(u -> u.getUsername()
-                .equals(username))
-                .findFirst()
-                .orElse(null);
+                    .filter(u -> u.getUsername().equals(username))
+                    .findFirst()
+                    .orElse(null);
     }
 
     @Override
     public User findByName(String name) {
         return users.stream()
-                .filter(u -> u.getName().equals(name))
-                .findFirst()
-                .orElse(null);
+                    .filter(u -> u.getName().equals(name))
+                    .findFirst()
+                    .orElse(null);
     }
 
     @Override
@@ -80,12 +83,6 @@ public class FileUserDao implements UserDao {
     
     @Override
     public boolean passwordMatches(User user, String password) {
-        if(password.equals(user.getPassword())) {
-            return true;
-        }
-        
-        return false;
-            
+        return password.equals(user.getPassword());
     }
-
 }
