@@ -3,15 +3,14 @@
 
 Ohjelma olettaa, että sen käynnistyshakemistossa on konfiguraatiotiedosto config.properties, joka määrittelee käyttäjät ja todot tallettavien tiedostojen nimet. Tiedoston muoto on seuraava
 
-    userFile=users.txt
-
-    todoFile=todos.txt
+	userFile=users.txt
+	todoFile=todos.txt
 
 ## Ohjelman käytnnistäminen
 
 Ohjelma käynnistetään komennolla
 
-	java -jar Kurssien_seurantajarjestelma-1.0-SNAPSHOT.jar	
+	java -jar Kurssien_seurantajarjestelma.jar
 
 ## Kirjautuminen
 
