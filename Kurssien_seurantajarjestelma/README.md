@@ -14,6 +14,10 @@ Sovelluksen avulla käyttäjien on mahdollista pitää kirjaa päättymättömis
 
 [Arkkitehtuurikuvaus](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/arkkitehtuuri.md)
 
+## Releaset
+
+[Kurssien_seurantajarjestelma-app](https://github.com/lchz/otm-harjoitustyo/releases/tag/v0.5-alpha)
+
 ## Komentorivitoiminnot
 
 ### Projektin suorittaminen
