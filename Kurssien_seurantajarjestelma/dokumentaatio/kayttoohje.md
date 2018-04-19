@@ -1,4 +1,7 @@
 # Käyttöohje
+
+Lataa tiedosto [kurssien_seurantajarjestelma.jar](https://github.com/lchz/otm-harjoitustyo/releases)
+
 ## Konfigurointi
 
 Ohjelma olettaa, että sen käynnistyshakemistossa on konfiguraatiotiedosto config.properties, joka määrittelee käyttäjät ja todot tallettavien tiedostojen nimet. Tiedoston muoto on seuraava
