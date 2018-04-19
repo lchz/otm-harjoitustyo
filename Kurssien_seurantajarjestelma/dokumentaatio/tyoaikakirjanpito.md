@@ -10,3 +10,4 @@ päivä | aika | mitä tein
 17.4 | 0.5 | osa toiminnallisuuksia nappiin login
 17.4 | 1.0 | toiminnallisuudet nappiin create new user
 17.4 | 2.5 | dokumenttien päivityksiä, aloin tutustua jarin luomiseen
+19.4 | 0.5 | tiedoston jar luominen ja releasen linkki lisätty
