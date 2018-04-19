@@ -7,6 +7,12 @@ Ohjelma olettaa, että sen käynnistyshakemistossa on konfiguraatiotiedosto conf
 
     todoFile=todos.txt
 
+## Ohjelman käytnnistäminen
+
+Ohjelma käynnistetään komennolla
+
+	jaios	
+
 ## Kirjautuminen
 
 Sovellus käynnistyy kirjautumisnäkymään:
