@@ -11,7 +11,7 @@ Ohjelma olettaa, että sen käynnistyshakemistossa on konfiguraatiotiedosto conf
 
 Ohjelma käynnistetään komennolla
 
-	jaios	
+	java -jar Kurssien_seurantajarjestelma-1.0-SNAPSHOT.jar	
 
 ## Kirjautuminen
 
