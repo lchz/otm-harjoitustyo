@@ -24,13 +24,15 @@ public class FileUserDao implements UserDao {
                 users.add(u);
             }
 
-        } catch (Exception e) {
+        } 
+        catch (Exception e) {
             FileWriter writer = new FileWriter(new File(file));
             writer.close();
         }
     }
 
     private void save() throws Exception {
+        
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (User user : users) {
                 writer.write(user.getId() + "; "

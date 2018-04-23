@@ -47,7 +47,7 @@ public class User {
         
         User u = (User) obj;
         return this.username.equals(u.username) || this.name.equals(u.name) || 
-                this.email.equals(u.email) || this.password.equals(u.password);
+                this.email.equals(u.email);
         
     }
 }

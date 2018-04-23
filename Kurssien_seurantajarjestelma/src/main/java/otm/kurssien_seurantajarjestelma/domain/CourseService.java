@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import otm.kurssien_seurantajarjestelma.dao.CourseDao;
+import otm.kurssien_seurantajarjestelma.dao.FileCourseDao;
+import otm.kurssien_seurantajarjestelma.dao.FileUserDao;
 import otm.kurssien_seurantajarjestelma.dao.UserDao;
 
 /**
@@ -12,13 +14,13 @@ import otm.kurssien_seurantajarjestelma.dao.UserDao;
  */
 
 public class CourseService {
-    private CourseDao courseDao;
-    private UserDao userDao;
+    private FileCourseDao fileCourseDao;
+    private FileUserDao fileUserDao;
     private User loggedIn;
 
-    public CourseService(CourseDao courseDao, UserDao userDao) {
-        this.userDao = userDao;
-        this.courseDao = courseDao;
+    public CourseService(FileCourseDao fileCourseDao, FileUserDao fileUserDao) {
+        this.fileUserDao = fileUserDao;
+        this.fileCourseDao = fileCourseDao;
     }
 
     /**
@@ -32,7 +34,7 @@ public class CourseService {
      */
     
     public boolean login(String username, String password) {
-        User user = userDao.findByUsername(username);
+        User user = fileUserDao.findByUsername(username);
         if (user == null) {
             return false;
         }
@@ -76,20 +78,20 @@ public class CourseService {
      */
     
     public boolean createUser(String username, String name, String email, String password) {
-        if (userDao.findByUsername(username) != null) {
+        if (fileUserDao.findByUsername(username) != null) {
             return false;
         }
 
-        if (userDao.findByName(name) != null) {
+        if (fileUserDao.findByName(name) != null) {
             return false;
         }
 
-        int id = userDao.getAll().size() + 1;
+        int id = fileUserDao.getAll().size() + 1;
         User user = new User(id, name, username, email, password);
 
         try {
             
-            userDao.create(user);
+            fileUserDao.create(user);
 
         } catch (Exception e) {
             return false;
@@ -106,11 +108,11 @@ public class CourseService {
      * @return true jos kurssien lisääminen onnistunut
      */
     
-    public boolean createCourse(String content, User user) {
+    public boolean createCourse(String content) {
         Course course = new Course(content, loggedIn);
 
         try {
-            courseDao.create(course);
+            fileCourseDao.create(course);
         } catch (Exception e) {
             return false;
         }
@@ -128,12 +130,20 @@ public class CourseService {
         if (loggedIn == null) {
             return new ArrayList<>();
         }
+        
+        if (fileCourseDao.getAll().isEmpty()) {
+            return new ArrayList<>();
+        }
 
-        return courseDao.getAll()
+//        try {
+        return fileCourseDao.getAll()
                 .stream()
-                .filter(c -> c.getUser().equals(loggedIn))
+                .filter(c -> c.getUser().getUsername().equals(loggedIn.getUsername()))
                 .filter(c -> !c.isFinished())
                 .collect(Collectors.toList());
+//        } catch (Exception e) {
+//            return new ArrayList<>();
+//        }
     }
 
     /**
@@ -144,7 +154,7 @@ public class CourseService {
     
     public void markFinished(int id) {
         try {
-            courseDao.setFinished(id);
+            fileCourseDao.setFinished(id);
 
         } catch (Exception e) {
 

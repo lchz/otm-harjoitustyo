@@ -54,7 +54,16 @@ public class Course {
         }
         
         Course k = (Course) obj;
-        return id == k.id;
+        
+        if (this.id == k.id) {
+            return true;
+        }
+        
+        if (this.user == k.user && this.content == k.content) {
+            return true;
+        }
+        
+        return false;
     }
     
 }
