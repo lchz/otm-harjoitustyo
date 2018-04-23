@@ -18,19 +18,19 @@ public class FileCourseDao implements CourseDao {
         this.file = file;
 
         try {
-        Scanner reader = new Scanner(new File(file));
-        while (reader.hasNextLine()) {
-            String[] parts = reader.nextLine().split("; ");
-            int id = Integer.parseInt(parts[0]);
-            boolean finished = Boolean.parseBoolean(parts[2]);
+            Scanner reader = new Scanner(new File(file));
+            while (reader.hasNextLine()) {
+                String[] parts = reader.nextLine().split("; ");
+                int id = Integer.parseInt(parts[0]);
+                boolean finished = Boolean.parseBoolean(parts[2]);
 
-            User user = users.getAll()
-                    .stream()
-                    .filter(u -> u.getUsername().equals(parts[3])).findFirst().orElse(null);
+                User user = users.getAll()
+                        .stream()
+                        .filter(u -> u.getUsername().equals(parts[3])).findFirst().orElse(null);
 
-            Course course = new Course(id, parts[1], finished, user);
-            this.courses.add(course);
-        }
+                Course course = new Course(id, parts[1], finished, user);
+                this.courses.add(course);
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -42,14 +42,13 @@ public class FileCourseDao implements CourseDao {
     private void save() throws Exception {
 //        FileWriter writer = new FileWriter(new File(file));
         try (FileWriter writer = new FileWriter(new File(file))) {
-        for (Course course : courses) {
-            writer.write(course.getId() + "; "
-                    + course.getContent() + "; "
-                    + course.isFinished() + "; "
-                    + course.getUser().getUsername() + "; "
-                    + course.getUser().getName() + "\n");
-        }
-
+            for (Course course : courses) {
+                writer.write(course.getId() + "; "
+                        + course.getContent() + "; "
+                        + course.isFinished() + "; "
+                        + course.getUser().getUsername() + "; "
+                        + course.getUser().getName() + "\n");
+            }
         } catch (Exception e) {
             FileWriter writer = new FileWriter(new File(file));
             writer.close();
@@ -77,10 +76,10 @@ public class FileCourseDao implements CourseDao {
     @Override
     public void setFinished(int id) throws Exception {
         courses.stream()
-               .filter((c) -> (c.getId() == id))
+                .filter((c) -> (c.getId() == id))
                 .forEachOrdered((c) -> {
                     c.setFinished();
-        });
+                });
 
         save();
     }

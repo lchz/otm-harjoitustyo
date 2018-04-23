@@ -24,15 +24,14 @@ public class FileUserDao implements UserDao {
                 users.add(u);
             }
 
-        } 
-        catch (Exception e) {
+        } catch (Exception e) {
             FileWriter writer = new FileWriter(new File(file));
             writer.close();
         }
     }
 
     private void save() throws Exception {
-        
+
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (User user : users) {
                 writer.write(user.getId() + "; "
@@ -41,48 +40,47 @@ public class FileUserDao implements UserDao {
                         + user.getEmail() + "; "
                         + user.getPassword() + "\n");
             }
-            
+
         } catch (Exception e) {
             FileWriter writer = new FileWriter(new File(file));
             writer.close();
         }
     }
-    
+
     private int generateId() {
         return users.size() + 1;
     }
-    
 
     @Override
     public User create(User user) throws Exception {
         user.setId(generateId());
         users.add(user);
         save();
-        
+
         return user;
     }
 
     @Override
     public User findByUsername(String username) {
         return users.stream()
-                    .filter(u -> u.getUsername().equals(username))
-                    .findFirst()
-                    .orElse(null);
+                .filter(u -> u.getUsername().equals(username))
+                .findFirst()
+                .orElse(null);
     }
 
     @Override
     public User findByName(String name) {
         return users.stream()
-                    .filter(u -> u.getName().equals(name))
-                    .findFirst()
-                    .orElse(null);
+                .filter(u -> u.getName().equals(name))
+                .findFirst()
+                .orElse(null);
     }
 
     @Override
     public List<User> getAll() {
         return users;
     }
-    
+
     @Override
     public boolean passwordMatches(User user, String password) {
         return password.equals(user.getPassword());
