@@ -12,8 +12,8 @@ import otm.kurssien_seurantajarjestelma.dao.UserDao;
  * Sovelluslogiikasta vastaava luokka
  *
  */
-
 public class CourseService {
+
     private FileCourseDao fileCourseDao;
     private FileUserDao fileUserDao;
     private User loggedIn;
@@ -32,7 +32,6 @@ public class CourseService {
      * @return true jos käyttäjätunnus on olemassa ja salasana on oikein, muuten
      * false
      */
-    
     public boolean login(String username, String password) {
         User user = fileUserDao.findByUsername(username);
         if (user == null) {
@@ -53,7 +52,6 @@ public class CourseService {
      *
      * @return kirjautuneena oleva käyttäjä
      */
-    
     public User getLoggedUser() {
         return loggedIn;
     }
@@ -61,7 +59,6 @@ public class CourseService {
     /**
      * uloskirjautuminen
      */
-    
     public void logout() {
         loggedIn = null;
     }
@@ -76,7 +73,6 @@ public class CourseService {
      *
      * @return true jos käyttäjätunnus on luotu onnistuneesti, muuten false
      */
-    
     public boolean createUser(String username, String name, String email, String password) {
         if (fileUserDao.findByUsername(username) != null) {
             return false;
@@ -90,7 +86,7 @@ public class CourseService {
         User user = new User(id, name, username, email, password);
 
         try {
-            
+
             fileUserDao.create(user);
 
         } catch (Exception e) {
@@ -100,14 +96,12 @@ public class CourseService {
         return true;
     }
 
-    
     /**
      * Uuden kurssin lisääminen kirjautuneena olevalle käyttäjälle
      *
      * @param content luotavan kurssin sisältö
      * @return true jos kurssien lisääminen onnistunut
      */
-    
     public boolean createCourse(String content) {
         Course course = new Course(content, loggedIn);
 
@@ -125,25 +119,41 @@ public class CourseService {
      *
      * @return kirjautuneen käyttäjän tekemättömät kurssit
      */
-    
     public List<Course> getUnfinished() {
         if (loggedIn == null) {
             return new ArrayList<>();
         }
-        
+
         if (fileCourseDao.getAll().isEmpty()) {
             return new ArrayList<>();
         }
 
-//        try {
         return fileCourseDao.getAll()
                 .stream()
                 .filter(c -> c.getUser().getUsername().equals(loggedIn.getUsername()))
                 .filter(c -> !c.isFinished())
                 .collect(Collectors.toList());
-//        } catch (Exception e) {
-//            return new ArrayList<>();
-//        }
+    }
+    
+    /**
+     * kirjautuneen käyttäjän käynyt kurssit
+     * 
+     * @return kirjautuneen käyttäjän käynyt kurssit 
+     */
+    public List<Course> getFinished() {
+        if (loggedIn == null) {
+            return new ArrayList<>();
+        }
+
+        if (fileCourseDao.getAll().isEmpty()) {
+            return new ArrayList<>();
+        }
+
+        return fileCourseDao.getAll()
+                .stream()
+                .filter(c -> c.getUser().getUsername().equals(loggedIn.getUsername()))
+                .filter(c -> c.isFinished())
+                .collect(Collectors.toList());
     }
 
     /**
@@ -151,11 +161,10 @@ public class CourseService {
      *
      * @param id päätydyksi merkittävän kurssin tunniste
      */
-    
     public void markFinished(int id) {
+        
         try {
             fileCourseDao.setFinished(id);
-
         } catch (Exception e) {
 
         }
