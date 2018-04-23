@@ -11,3 +11,5 @@ päivä | aika | mitä tein
 17.4 | 1.0 | toiminnallisuudet nappiin create new user
 17.4 | 2.5 | dokumenttien päivityksiä, aloin tutustua jarin luomiseen
 19.4 | 0.5 | tiedoston jar luominen ja releasen linkki lisätty
+20.4 | 4.0 | lisää toiminnallisuuksia
+23.4 | 5.0 | testejä luokkiin Course.java, User.java, UserDao.java ja CourseDao.java, korjauksia luokkaan FileCourseDao
