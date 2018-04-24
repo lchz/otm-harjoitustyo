@@ -32,3 +32,17 @@ Uusi käyttäjä luodaan syöttämällä oikeanmuotoiset tiedot syötekenttiin j
 ![kuva uuden käyttäjän luomisesta](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/kuvat/uudenkayttajanluominen.png)
 
 Jos käyttäjän luominen onnistuu, palataan kirjautumisnäkymään.
+
+## Kurssien luominen ja päättyneeksi merkkaaminen
+
+Onnistuneen kirjautumisen myötä siirrytään käyttäjien olemassolevat kurssit 
+listaavaan näkymään 
+
+![kuva kurssienLuominenNakyma](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/kuvat/kurssienLuominenNakyma.png)
+
+Näkymä mahdollistaa olemassaolevien kurssien merkkaamisen päättyneeksi 
+painikkeella _finished_ sekä uusien kurssien luomisen kirjoittamalla 
+syötekenttään kurssin kuvauksen ja painamalla _create_.
+
+Klikkaamalla näkymän oikean ylänurkan painiketta _logout_, käyttäjä kirjautuu 
+ulos sovelluksesta ja sovellus palaa takaisin kirjaantumisnäkymään.
