@@ -273,7 +273,7 @@ public class JarjestelmaUi extends Application {
         HBox box = new HBox(10);
         Label label = new Label(course.getContent());
         label.setMinHeight(28);
-        Button button = new Button("finnished");
+        Button button = new Button("finished");
         button.setOnAction(e -> {
             courseService.markFinished(course.getId());
             redrawCourselist();
