@@ -2,9 +2,13 @@
 
 ## Rakenne
 
-Ohjelman rakenne noudattelee kolmitasoista kerrosarkkitehtuuria, ja koorin pakkausrakenne on seuraava:
+Ohjelman rakenne noudattelee kolmitasoista kerrosarkkitehtuuria, ja koodin 
+pakkausrakenne on seuraava:
 
-Pakkaus _otm.kurssien_seurantajarjestelma.ui_ sisältää JavaFX:llä toteutetun käyttöliittymän _otm.kurssien_seurantajarjestelma.domain_ sovelluslogiigan ja _otm.kurssien_seurantajarjestelma.dao_ tietojen pysyväistallennuksesta vastaavan koodin.
+Pakkaus _otm.kurssien_seurantajarjestelma.ui_ sisältää JavaFX:llä toteutetun 
+käyttöliittymän _otm.kurssien_seurantajarjestelma.domain_ sovelluslogiigan ja 
+_otm.kurssien_seurantajarjestelma.dao_ tietojen pysyväistallennuksesta 
+vastaavan koodin.
 
 ## Käyttöliittymä
 
@@ -15,13 +19,20 @@ Käyttöliittymä sisältää neljä erillistä näkymää
 - tulevien kurssien lista
 - päättyneiden kurssien lista
 
-Jokainen näistä on toteutettu omana Scene-oliona. Näkymistä yksi kerrallaan on näkyvänä eli sijoitettuna sovelluksen stageen. Käyttöliittymä on rakennettu ohjelmallisesti luokassa [otm.kurssien_seurantajarjestelma.ui.JarjestelmaUi](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/src/main/java/otm/kurssien_seurantajarjestelma/ui/JarjestelmaUi.java). 
+Jokainen näistä on toteutettu omana Scene-oliona. Näkymistä yksi kerrallaan on 
+näkyvänä eli sijoitettuna sovelluksen stageen. Käyttöliittymä on rakennettu 
+ohjelmallisesti luokassa [otm.kurssien_seurantajarjestelma.ui.JarjestelmaUi](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/src/main/java/otm/kurssien_seurantajarjestelma/ui/JarjestelmaUi.java). 
 
-Käyttöliittymä on pyritty eristämään täysin sovelluslogiikasta, se ainoastaan kutsuu sopivin parametrein sovelluslogiikan toteuttavan olion _CourseServicen_ metodeja.
+Käyttöliittymä on pyritty eristämään täysin sovelluslogiikasta. Se ainoastaan 
+kutsuu sopivin parametrein sovelluslogiikan toteuttavan olion _CourseServicen_ 
+metodeja.
 
 Kun sovelluksen tulevien kurssien listan tilanne muuttuu, eli uusi käyttäjä 
 kirjautuu, kursseja merkitään päättyneiksi tai niitä luodaan, kutsutaan 
-sovelluksen metodia [redrawCourselist](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/src/main/java/otm/kurssien_seurantajarjestelma/ui/JarjestelmaUi.java#L290) joka renderöi kurssilistanäkymän uudelleen sovellukslogiikalta saamansa näytettävien kurssien listan perusteella.
+sovelluksen metodia [redrawCourselist](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/src/main/java/otm/kurssien_seurantajarjestelma/ui/JarjestelmaUi.java#L290) 
+ja [redrawFinishedlist](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/src/main/java/otm/kurssien_seurantajarjestelma/ui/JarjestelmaUi.java#L305), 
+jotka renderöivät kurssilistanäkymät uudelleen sovellukslogiikalta saamansa 
+näytettävien kurssien listojen perusteella.
 
 ## Sovelluslogiikka
 
