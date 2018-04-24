@@ -56,10 +56,9 @@
                 <version>0.8.0</version>
                 <configuration>
                     <excludes>
-                        <exclude>otm.Kurssien_jarjstelma/ui/**/*</exclude>
+                        <exclude>otm/kurssienseurantajarjestelma/ui/*</exclude>
                     </excludes>
                 </configuration>
-                
                 <executions>
                     <execution>
                         <id>default-prepare-agent</id>
