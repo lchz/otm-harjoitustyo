@@ -13,9 +13,15 @@ Käyttöliittymä sisältää neljä erillistä näkymää
 - kirjautuminen
 - uuden käyttäjän luominen
 - tulevien kurssien lista
-- käyneiden kurssien lista
+- päättyneiden kurssien lista
 
 Jokainen näistä on toteutettu omana Scene-oliona. Näkymistä yksi kerrallaan on näkyvänä eli sijoitettuna sovelluksen stageen. Käyttöliittymä on rakennettu ohjelmallisesti luokassa [otm.kurssien_seurantajarjestelma.ui.JarjestelmaUi](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/src/main/java/otm/kurssien_seurantajarjestelma/ui/JarjestelmaUi.java). 
+
+Käyttöliittymä on pyritty eristämään täysin sovelluslogiikasta, se ainoastaan kutsuu sopivin parametrein sovelluslogiikan toteuttavan olion _CourseServicen_ metodeja.
+
+Kun sovelluksen tulevien kurssien listan tilanne muuttuu, eli uusi käyttäjä 
+kirjautuu, kursseja merkitään päättyneiksi tai niitä luodaan, kutsutaan 
+sovelluksen metodia [redrawCourselist](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/src/main/java/otm/kurssien_seurantajarjestelma/ui/JarjestelmaUi.java#L290) joka renderöi kurssilistanäkymän uudelleen sovellukslogiikalta saamansa näytettävien kurssien listan perusteella.
 
 ## Sovelluslogiikka
 
