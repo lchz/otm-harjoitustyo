@@ -6,8 +6,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import otm.kurssien_seurantajarjestelma.domain.Course;
-import otm.kurssien_seurantajarjestelma.domain.User;
+import otm.kurssienseurantajarjestelma.domain.Course;
+import otm.kurssienseurantajarjestelma.domain.User;
 
 public class CourseTest {
     User u1;
@@ -92,11 +92,5 @@ public class CourseTest {
         Course c6 = new Course(6, "TiTo", false, u1);
         assertFalse(c1.equals(c6));
     }
-    
-//    @Test
-//    public void EqualWhenDifferentContentWithSameId() {
-//        Course c7 = new Course(1, "Tira", false, u1);
-//        assertTrue(c1.equals(c7));
-//    }
     
 }

@@ -1,12 +1,12 @@
-package otm.kurssien_seurantajarjestelma.domain;
+package otm.kurssienseurantajarjestelma.domain;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-import otm.kurssien_seurantajarjestelma.dao.CourseDao;
-import otm.kurssien_seurantajarjestelma.dao.FileCourseDao;
-import otm.kurssien_seurantajarjestelma.dao.FileUserDao;
-import otm.kurssien_seurantajarjestelma.dao.UserDao;
+import otm.kurssienseurantajarjestelma.dao.CourseDao;
+import otm.kurssienseurantajarjestelma.dao.FileCourseDao;
+import otm.kurssienseurantajarjestelma.dao.FileUserDao;
+import otm.kurssienseurantajarjestelma.dao.UserDao;
 
 /**
  * Sovelluslogiikasta vastaava luokka

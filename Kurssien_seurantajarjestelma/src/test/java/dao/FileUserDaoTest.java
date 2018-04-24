@@ -10,9 +10,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
-import otm.kurssien_seurantajarjestelma.dao.FileUserDao;
-import otm.kurssien_seurantajarjestelma.dao.UserDao;
-import otm.kurssien_seurantajarjestelma.domain.User;
+import otm.kurssienseurantajarjestelma.dao.FileUserDao;
+import otm.kurssienseurantajarjestelma.dao.UserDao;
+import otm.kurssienseurantajarjestelma.domain.User;
 
 public class FileUserDaoTest {
     @Rule

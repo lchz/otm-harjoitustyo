@@ -1,4 +1,4 @@
-package otm.kurssien_seurantajarjestelma.domain;
+package otm.kurssienseurantajarjestelma.domain;
 
 public class User {
     public int id;

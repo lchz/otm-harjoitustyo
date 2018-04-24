@@ -1,4 +1,4 @@
-package otm.kurssien_seurantajarjestelma.domain;
+package otm.kurssienseurantajarjestelma.domain;
 
 /*
     Yksittäistä kurssia kuvaava luokka

@@ -1,7 +1,7 @@
-package otm.kurssien_seurantajarjestelma.dao;
+package otm.kurssienseurantajarjestelma.dao;
 
 import java.util.List;
-import otm.kurssien_seurantajarjestelma.domain.Course;
+import otm.kurssienseurantajarjestelma.domain.Course;
 
 public interface CourseDao {
     

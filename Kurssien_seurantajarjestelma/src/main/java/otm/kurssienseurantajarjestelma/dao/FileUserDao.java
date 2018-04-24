@@ -1,11 +1,11 @@
-package otm.kurssien_seurantajarjestelma.dao;
+package otm.kurssienseurantajarjestelma.dao;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import otm.kurssien_seurantajarjestelma.domain.User;
+import otm.kurssienseurantajarjestelma.domain.User;
 
 public class FileUserDao implements UserDao {
 

@@ -13,12 +13,12 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
-import otm.kurssien_seurantajarjestelma.dao.CourseDao;
-import otm.kurssien_seurantajarjestelma.dao.FileCourseDao;
-import otm.kurssien_seurantajarjestelma.dao.FileUserDao;
-import otm.kurssien_seurantajarjestelma.dao.UserDao;
-import otm.kurssien_seurantajarjestelma.domain.Course;
-import otm.kurssien_seurantajarjestelma.domain.User;
+import otm.kurssienseurantajarjestelma.dao.CourseDao;
+import otm.kurssienseurantajarjestelma.dao.FileCourseDao;
+import otm.kurssienseurantajarjestelma.dao.FileUserDao;
+import otm.kurssienseurantajarjestelma.dao.UserDao;
+import otm.kurssienseurantajarjestelma.domain.Course;
+import otm.kurssienseurantajarjestelma.domain.User;
 
 public class FileCourseDaoTest {
     @Rule
@@ -58,7 +58,14 @@ public class FileCourseDaoTest {
         
         Course course = dao.getAll().get(0);
         assertTrue(course.isFinished());
-//        assertEquals(1, course.getId());
+    }
+    
+    @Test
+    public void finishedCourseIsntExisted() throws Exception {
+        dao.setFinished(2);
+        
+        List<Course> courses = dao.getAll();
+        courses.stream().forEach(c -> assertTrue(!c.isFinished()));
     }
     
     @Test

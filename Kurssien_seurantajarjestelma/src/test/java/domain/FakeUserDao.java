@@ -2,8 +2,8 @@ package domain;
 
 import java.util.ArrayList;
 import java.util.List;
-import otm.kurssien_seurantajarjestelma.dao.UserDao;
-import otm.kurssien_seurantajarjestelma.domain.User;
+import otm.kurssienseurantajarjestelma.dao.UserDao;
+import otm.kurssienseurantajarjestelma.domain.User;
 
 public class FakeUserDao implements UserDao {
     List<User> users = new ArrayList<>();
