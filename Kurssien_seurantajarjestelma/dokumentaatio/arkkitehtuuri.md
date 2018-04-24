@@ -12,10 +12,10 @@ Käyttöliittymä sisältää neljä erillistä näkymää
 
 - kirjautuminen
 - uuden käyttäjän luominen
-- kurssilista
+- tulevien kurssien lista
 - käyneiden kurssien lista
 
-Jokainen näistä on toteutettu omana Scene-oliona. 
+Jokainen näistä on toteutettu omana Scene-oliona. Näkymistä yksi kerrallaan on näkyvänä eli sijoitettuna sovelluksen stageen. Käyttöliittymä on rakennettu ohjelmallisesti luokassa [otm.kurssien_seurantajarjestelma.ui.JarjestelmaUi](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/src/main/java/otm/kurssien_seurantajarjestelma/ui/JarjestelmaUi.java). 
 
 ## Sovelluslogiikka
 
