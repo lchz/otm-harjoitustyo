@@ -5,6 +5,8 @@
 Ohjelman rakenne noudattelee kolmitasoista kerrosarkkitehtuuria, ja koodin 
 pakkausrakenne on seuraava:
 
+![kuva pakkausrakenne](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/kuvat/pakkausrakenne.jpg)
+
 Pakkaus _otm.kurssien_seurantajarjestelma.ui_ sisältää JavaFX:llä toteutetun 
 käyttöliittymän _otm.kurssien_seurantajarjestelma.domain_ sovelluslogiigan ja 
 _otm.kurssien_seurantajarjestelma.dao_ tietojen pysyväistallennuksesta 
