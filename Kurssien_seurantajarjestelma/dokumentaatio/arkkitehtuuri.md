@@ -7,9 +7,9 @@ pakkausrakenne on seuraava:
 
 ![kuva pakkausrakenne](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/kuvat/pakkausrakenne.jpg)
 
-Pakkaus _otm.kurssien_seurantajarjestelma.ui_ sisältää JavaFX:llä toteutetun 
-käyttöliittymän _otm.kurssien_seurantajarjestelma.domain_ sovelluslogiigan ja 
-_otm.kurssien_seurantajarjestelma.dao_ tietojen pysyväistallennuksesta 
+Pakkaus _otm.kurssienseurantajarjestelma.ui_ sisältää JavaFX:llä toteutetun 
+käyttöliittymän _otm.kurssienseurantajarjestelma.domain_ sovelluslogiigan ja 
+_otm.kurssienseurantajarjestelma.dao_ tietojen pysyväistallennuksesta 
 vastaavan koodin.
 
 ## Käyttöliittymä
@@ -23,7 +23,7 @@ Käyttöliittymä sisältää neljä erillistä näkymää
 
 Jokainen näistä on toteutettu omana Scene-oliona. Näkymistä yksi kerrallaan on 
 näkyvänä eli sijoitettuna sovelluksen stageen. Käyttöliittymä on rakennettu 
-ohjelmallisesti luokassa [otm.kurssien_seurantajarjestelma.ui.JarjestelmaUi](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/src/main/java/otm/kurssien_seurantajarjestelma/ui/JarjestelmaUi.java). 
+ohjelmallisesti luokassa [otm.kurssienseurantajarjestelma.ui.JarjestelmaUi](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/src/main/java/otm/kurssienseurantajarjestelma/ui/JarjestelmaUi.java). 
 
 Käyttöliittymä on pyritty eristämään täysin sovelluslogiikasta. Se ainoastaan 
 kutsuu sopivin parametrein sovelluslogiikan toteuttavan olion _CourseServicen_ 
