@@ -29,7 +29,7 @@ metodeja.
 
 Kun sovelluksen tulevien kurssien listan tilanne muuttuu, eli uusi käyttäjä 
 kirjautuu, kursseja merkitään päättyneiksi tai niitä luodaan, kutsutaan 
-sovelluksen metodia [redrawCourselist](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/src/main/java/otm/kurssien_seurantajarjestelma/ui/JarjestelmaUi.java#L290) 
+sovelluksen metodeja [redrawCourselist](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/src/main/java/otm/kurssien_seurantajarjestelma/ui/JarjestelmaUi.java#L290) 
 ja [redrawFinishedlist](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/src/main/java/otm/kurssien_seurantajarjestelma/ui/JarjestelmaUi.java#L305), 
 jotka renderöivät kurssilistanäkymät uudelleen sovellukslogiikalta saamansa 
 näytettävien kurssien listojen perusteella.
@@ -46,3 +46,8 @@ Toiminnallisista kokonaisuuksista vastaa luokka [CourseService](https://github.c
 - List getUnfinished()
 - void createCourse(String content, User user)
 - void markFinished(int id)
+
+_CourseService_ pääsee käsiksi käyttäjien ja kurssien tietojen tallennuksesta 
+vastaavan pakkausessa _otm.kurssien_seurantajarjestelma.dao_ sijaitsevien rajapinnat 
+_CourseDao_ ja _UserDao_ toteuttavien luokkien kautta. Luokkien toteutuksen 
+injektoidaan sovelluslogiikalle konstruktorikutsun yhteydessä.
