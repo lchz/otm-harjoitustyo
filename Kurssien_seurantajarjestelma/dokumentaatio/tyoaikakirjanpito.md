@@ -13,3 +13,4 @@ päivä | aika | mitä tein
 19.4 | 0.5 | tiedoston jar luominen ja releasen linkki lisätty
 20.4 | 4.0 | lisää toiminnallisuuksia
 23.4 | 5.0 | testejä luokkiin Course.java, User.java, UserDao.java ja CourseDao.java, korjauksia luokkaan FileCourseDao
+23.4 | 2.0 | lisää toiminnallisuuksia
