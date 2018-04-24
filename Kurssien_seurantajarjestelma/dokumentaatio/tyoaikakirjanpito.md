@@ -14,6 +14,4 @@ päivä | aika | mitä tein
 20.4 | 4.0 | lisää toiminnallisuuksia
 23.4 | 5.0 | testejä luokkiin Course.java, User.java, UserDao.java ja CourseDao.java, korjauksia luokkaan FileCourseDao
 23.4 | 2.0 | lisää toiminnallisuuksia
-24.4 | 1.0 | lisäyksiä tiedostoon arkkitehtuuri.md
-24.4 | 1.0 | testien ja checkstylen tarkastelu pajassa
-24.4 | 1.0 | arkkitehtuurin kaavoiden piirustelut ja lisäyksiä tiedostoon arkkitehtuuri.md 
+24.4 | 4.0 | lisäyksiä tiedostoon arkkitehtuuri.md, testien ja checkstylen tarkastelu pajassa, arkkitehtuurin kaavoiden piirustelut ja lisäyksiä tiedostoon arkkitehtuuri.md, päivityksiä käyttöohjeeseen
