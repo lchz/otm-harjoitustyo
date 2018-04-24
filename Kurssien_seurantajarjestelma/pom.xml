@@ -82,7 +82,7 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>otm.kurssien_seurantajarjestelma.ui.JarjestelmaUi</mainClass>
+                                    <mainClass>otm.kurssienseurantajarjestelma.ui.JarjestelmaUi</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>
