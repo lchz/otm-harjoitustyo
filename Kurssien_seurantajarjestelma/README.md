@@ -10,7 +10,7 @@ Sovelluksen avulla käyttäjien on mahdollista pitää kirjaa päättymättömis
 
 [Käyttöohje](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/kayttoohje.md)
 
-[Testikattavuus](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/kuvat/Testikattavuus.png)
+[Testikattavuus](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/kuvat/testikattavuus40.png)
 
 [Arkkitehtuurikuvaus](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/arkkitehtuuri.md)
 
@@ -24,7 +24,7 @@ Sovelluksen avulla käyttäjien on mahdollista pitää kirjaa päättymättömis
 
 Projektin koodin pystyy suorittamaan komennolla
 
-	mvn compile exec:java -Dexec.mainClass=otm.kurssien_seurantajarjestelma.ui.JarjestelmaUi
+	mvn compile exec:java -Dexec.mainClass=otm.kurssienseurantajarjestelma.ui.JarjestelmaUi
 
 ### Testaus
 
