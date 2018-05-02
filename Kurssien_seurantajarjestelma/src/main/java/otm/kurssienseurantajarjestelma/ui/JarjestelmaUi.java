@@ -39,6 +39,10 @@ public class JarjestelmaUi extends Application {
     private Label menuLabel = new Label();
     private Label menuLabel2 = new Label();
 
+    /**
+     * tarvittavien dokumentien lisääminen
+     * @throws Exception 
+     */
     @Override
     public void init() throws Exception {
         Properties properties = new Properties();
@@ -53,6 +57,12 @@ public class JarjestelmaUi extends Application {
         courseService = new CourseService(courseDao, userDao);
     }
 
+    /**
+     * näkymien asettaminen
+     * 
+     * @param primaryStage päänäkymä
+     * @throws Exception 
+     */
     @Override
     public void start(Stage primaryStage) throws Exception {
         //login scene
@@ -269,6 +279,13 @@ public class JarjestelmaUi extends Application {
         primaryStage.show();
     }
 
+    /**
+     * kurssin solmun luominen
+     * 
+     * @param course kurssi
+     * 
+     * @return luodun kurssin solmu
+     */
     public Node createCourseNode(Course course) {
         HBox box = new HBox(10);
         Label label = new Label(course.getContent());
@@ -287,6 +304,14 @@ public class JarjestelmaUi extends Application {
         return box;
     }
     
+    /**
+     * päättyneen kurssin solmun luominen
+     * 
+     * @param course päättynyt kurssi
+     * 
+     * @return luodun päättyneen kurssin solmu
+     */
+    
     public Node createFinishedNode(Course course) {
         HBox box = new HBox(10);
         Label label = new Label(course.getContent());
@@ -296,7 +321,10 @@ public class JarjestelmaUi extends Application {
         
         return box;
     }
-
+    
+    /**
+     * kurssien listaaminen
+     */
     public void redrawCourselist() {
         courseNodes.getChildren().clear();
 
@@ -312,6 +340,9 @@ public class JarjestelmaUi extends Application {
 
     }
     
+    /**
+     * päättyneiden kurssien listaaminen
+     */
     public void redrawFinishedlist() {
         finishedNodes.getChildren().clear();
         
@@ -326,8 +357,9 @@ public class JarjestelmaUi extends Application {
         }
     }
     
-    
-
+    /**
+     * viesti kun sovellus sulkeutuu
+     */
     @Override
     public void stop() {
         //lopetustoimenpiteet
