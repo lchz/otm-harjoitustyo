@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import otm.kurssienseurantajarjestelma.dao.CourseDao;
-import otm.kurssienseurantajarjestelma.dao.FileCourseDao;
-import otm.kurssienseurantajarjestelma.dao.FileUserDao;
 import otm.kurssienseurantajarjestelma.dao.UserDao;
 
 /**
@@ -14,13 +12,13 @@ import otm.kurssienseurantajarjestelma.dao.UserDao;
  */
 public class CourseService {
 
-    private FileCourseDao fileCourseDao;
-    private FileUserDao fileUserDao;
+    private CourseDao courseDao;
+    private UserDao userDao;
     private User loggedIn;
 
-    public CourseService(FileCourseDao fileCourseDao, FileUserDao fileUserDao) {
-        this.fileUserDao = fileUserDao;
-        this.fileCourseDao = fileCourseDao;
+    public CourseService(CourseDao courseDao, UserDao userDao) {
+        this.userDao = userDao;
+        this.courseDao = courseDao;
     }
 
     /**
@@ -33,7 +31,7 @@ public class CourseService {
      * false
      */
     public boolean login(String username, String password) {
-        User user = fileUserDao.findByUsername(username);
+        User user = userDao.findByUsername(username);
         if (user == null) {
             return false;
         }
@@ -74,20 +72,20 @@ public class CourseService {
      * @return true jos käyttäjätunnus on luotu onnistuneesti, muuten false
      */
     public boolean createUser(String username, String name, String email, String password) {
-        if (fileUserDao.findByUsername(username) != null) {
+        if (userDao.findByUsername(username) != null) {
             return false;
         }
 
-        if (fileUserDao.findByName(name) != null) {
+        if (userDao.findByName(name) != null) {
             return false;
         }
 
-        int id = fileUserDao.getAll().size() + 1;
+        int id = userDao.getAll().size() + 1;
         User user = new User(id, name, username, email, password);
 
         try {
 
-            fileUserDao.create(user);
+            userDao.create(user);
 
         } catch (Exception e) {
             return false;
@@ -106,7 +104,7 @@ public class CourseService {
         Course course = new Course(content, loggedIn);
 
         try {
-            fileCourseDao.create(course);
+            courseDao.create(course);
         } catch (Exception e) {
             return false;
         }
@@ -124,11 +122,11 @@ public class CourseService {
             return new ArrayList<>();
         }
 
-        if (fileCourseDao.getAll().isEmpty()) {
+        if (courseDao.getAll().isEmpty()) {
             return new ArrayList<>();
         }
 
-        return fileCourseDao.getAll()
+        return courseDao.getAll()
                 .stream()
                 .filter(c -> c.getUser().getUsername().equals(loggedIn.getUsername()))
                 .filter(c -> !c.isFinished())
@@ -145,11 +143,11 @@ public class CourseService {
             return new ArrayList<>();
         }
 
-        if (fileCourseDao.getAll().isEmpty()) {
+        if (courseDao.getAll().isEmpty()) {
             return new ArrayList<>();
         }
 
-        return fileCourseDao.getAll()
+        return courseDao.getAll()
                 .stream()
                 .filter(c -> c.getUser().getUsername().equals(loggedIn.getUsername()))
                 .filter(c -> c.isFinished())
@@ -164,7 +162,7 @@ public class CourseService {
     public void markFinished(int id) {
         
         try {
-            fileCourseDao.setFinished(id);
+            courseDao.setFinished(id);
         } catch (Exception e) {
 
         }

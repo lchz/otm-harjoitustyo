@@ -8,5 +8,5 @@ public interface CourseDao {
     Course create(Course course) throws Exception;
     List<Course> getAll();
     void setFinished(int id) throws Exception;
-    
+   
 }

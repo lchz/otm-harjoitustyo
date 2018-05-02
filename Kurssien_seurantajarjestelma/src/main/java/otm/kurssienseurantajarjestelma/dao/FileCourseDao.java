@@ -33,14 +33,13 @@ public class FileCourseDao implements CourseDao {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
             FileWriter writer = new FileWriter(new File(file));
             writer.close();
         }
     }
 
     private void save() throws Exception {
-//        FileWriter writer = new FileWriter(new File(file));
+        
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (Course course : courses) {
                 writer.write(course.getId() + "; "

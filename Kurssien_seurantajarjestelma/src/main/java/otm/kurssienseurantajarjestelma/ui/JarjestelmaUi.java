@@ -286,6 +286,16 @@ public class JarjestelmaUi extends Application {
         box.getChildren().addAll(label, spacer, button);
         return box;
     }
+    
+    public Node createFinishedNode(Course course) {
+        HBox box = new HBox(10);
+        Label label = new Label(course.getContent());
+        label.setMinHeight(28);
+        
+        box.getChildren().addAll((label));
+        
+        return box;
+    }
 
     public void redrawCourselist() {
         courseNodes.getChildren().clear();
@@ -316,12 +326,7 @@ public class JarjestelmaUi extends Application {
         }
     }
     
-    public Node createFinishedNode(Course course) {
-        Label label = new Label(course.getContent());
-        label.setMinHeight(28);
-        
-        return label;
-    }
+    
 
     @Override
     public void stop() {
