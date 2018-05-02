@@ -63,4 +63,34 @@ CourseServicen ja ohjelman muiden osien suhdetta kuvaava luokka/pakkauskaavio:
 
 ![kuva pakkauskaavio](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/kuvat/pakkauskaavio.jpg)
 
+## Tietojen pysyväistallennus
 
+Pakkauksen _otm.kurssienseurantajarjestelma.dao_ luokat _FileCourseDao_ ja 
+_FileUserDao_ huolehtivat tietojen tallettamisesta tiedostoihin.
+
+### Päätoiminnallisuudet
+
+Kuvataan seuraavaksi sovelluksen toimintalogiikka muutaman 
+päätoiminnallisuuden osalta sekvenssikaaviona.
+
+#### käyttäjän kirjaantuminen
+
+Kun kirjautumisnäkymässä on syötekenttään kirjoitettu käyttäjätunnus ja 
+klikataan painiketta_loginButton_ etenee sovelluksen kontrolli seuraavasti:
+
+![kuva kirjautumisesta](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/kuvat/arkki-kirjautuminen.png)
+
+#### uuden käyttäjän luominen
+
+Kun uuden käyttäjän luomisnäkymässä on syötetty käyttäjätunnus, joka ei ole 
+jo käytössä sekä nimi ja klikataan painiketta _create User_ etenee sovelluksen 
+kontrolli seuraavasti:
+
+![kuva käyttäjän luomisesta](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/kuvat/arkki-kayttjanluominen.png)
+
+#### Kurssin luominen
+
+Uuden kurssin luovan _create course_-painikkeen klikkaamisen jälkeen sovelluksen
+kontrolli etenee seuraavasti:
+
+![kuva kurssin luomisesta](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/kuvat/arkki-kurssinluominen.png) 
