@@ -29,7 +29,12 @@ public class FileUserDao implements UserDao {
             writer.close();
         }
     }
-
+    
+    /**
+     * käyttäjien tallentaminen
+     * 
+     * @throws Exception 
+     */
     private void save() throws Exception {
 
         try (FileWriter writer = new FileWriter(new File(file))) {
@@ -46,11 +51,25 @@ public class FileUserDao implements UserDao {
             writer.close();
         }
     }
-
+    
+    /**
+     * käyttäjän id:n generoiminen
+     * 
+     * @return käyttäjän id
+     */
     private int generateId() {
         return users.size() + 1;
     }
-
+    
+    /**
+     * uuden käyttäjän luominen
+     * 
+     * @param user käyttäjä
+     * 
+     * @return uusi käyttäjä jos on luotu onnistuneesti
+     * 
+     * @throws Exception 
+     */
     @Override
     public User create(User user) throws Exception {
         user.setId(generateId());
@@ -60,6 +79,13 @@ public class FileUserDao implements UserDao {
         return user;
     }
 
+    /**
+     * käyttäjien löytäminen käyttäjätunnuksen perusteella
+     * 
+     * @param username käyttäjätunnus
+     * 
+     * @return löytynyt käyttäjä jos on olemassa, muuten null
+     */
     @Override
     public User findByUsername(String username) {
         return users.stream()
@@ -68,6 +94,13 @@ public class FileUserDao implements UserDao {
                 .orElse(null);
     }
 
+    /**
+     * käyttäjien löytäminen nimen perusteella
+     * 
+     * @param name käyttäjän nimi
+     * 
+     * @return löytynyt käyttäjä jos on olemassa, muuten null
+     */
     @Override
     public User findByName(String name) {
         return users.stream()
@@ -76,10 +109,24 @@ public class FileUserDao implements UserDao {
                 .orElse(null);
     }
 
+    /**
+     * kaikien käyttäjien listaaminen
+     * 
+     * @return kaikki käyttäjät listana
+     */
     @Override
     public List<User> getAll() {
         return users;
     }
+    
+    /**
+     * salasanan oikeaallisuus
+     * 
+     * @param user käyttäjä
+     * @param password salasana
+     * 
+     * @return true jos salasana oikein, muuten false
+     */
 
     @Override
     public boolean passwordMatches(User user, String password) {

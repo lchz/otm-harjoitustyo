@@ -37,6 +37,12 @@ public class FileCourseDao implements CourseDao {
             writer.close();
         }
     }
+    
+    /**
+     * kurssien tallentaminen
+     * 
+     * @throws Exception 
+     */
 
     private void save() throws Exception {
         
@@ -48,16 +54,29 @@ public class FileCourseDao implements CourseDao {
                         + course.getUser().getUsername() + "; "
                         + course.getUser().getName() + "\n");
             }
+            
         } catch (Exception e) {
             FileWriter writer = new FileWriter(new File(file));
             writer.close();
         }
     }
 
+    /**
+     * kurssin id:n generoiminen
+     * 
+     * @return  generoitu kurssin id
+     */
     private int generateId() {
         return courses.size() + 1;
     }
 
+    /**
+     * uuden kurssin luominen
+     * 
+     * @param course kurssi
+     * @return uusi kurssi jos on luotu onnistuneesti
+     * @throws Exception 
+     */
     @Override
     public Course create(Course course) throws Exception {
         course.setId(generateId());
@@ -67,11 +86,23 @@ public class FileCourseDao implements CourseDao {
         return course;
     }
 
+    /**
+     * kaikien kurssien listaaminen
+     * 
+     * @return kaikki kurssit listattuna
+     */
     @Override
     public List<Course> getAll() {
         return this.courses;
     }
 
+    /**
+     * kurssin merkkaaminen päättyneeksi
+     * 
+     * @param id kurssin id
+     * 
+     * @throws Exception 
+     */
     @Override
     public void setFinished(int id) throws Exception {
         courses.stream()
