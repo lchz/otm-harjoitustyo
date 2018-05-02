@@ -46,7 +46,7 @@ Komento
 
 generoi hakemistoon _target_ suoritettavan jar-tiedoston _Kurssien_seurantajarjestelma-1.0-SNAPSHOT.jar_
 
-###JavaDoc
+### JavaDoc
 
 JavaDoc generoidaan komennolla
 
