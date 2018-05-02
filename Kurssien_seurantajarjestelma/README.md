@@ -46,6 +46,14 @@ Komento
 
 generoi hakemistoon _target_ suoritettavan jar-tiedoston _Kurssien_seurantajarjestelma-1.0-SNAPSHOT.jar_
 
+###JavaDoc
+
+JavaDoc generoidaan komennolla
+
+	mavn javadoc:javadoc
+
+JavaDocia voi tarkastella avaamalla selaimella tiedosto _target/site/apidocs/index.html_
+
 ### Checkstyle
 
 Tiedostoon checkstyle.sml määrittelemät tarkistukset suoritetaan komennolla
