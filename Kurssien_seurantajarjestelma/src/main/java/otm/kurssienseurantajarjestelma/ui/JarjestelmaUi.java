@@ -32,12 +32,9 @@ public class JarjestelmaUi extends Application {
     private Scene courseScene;
     private Scene newUserScene;
     private Scene loginScene;
-    private Scene finishedCourseScene;
 
     private VBox courseNodes;
-    private VBox finishedNodes;
     private Label menuLabel = new Label();
-    private Label menuLabel2 = new Label();
 
     /**
      * tarvittavien dokumentien lisääminen
@@ -100,7 +97,6 @@ public class JarjestelmaUi extends Application {
             String password = passwordInput.getText();
 
             menuLabel.setText("Welcome " + username);
-            menuLabel2.setText("Welcome " + username);
 
             if (courseService.login(username, password)) {
                 loginMessage.setText("");
@@ -207,7 +203,7 @@ public class JarjestelmaUi extends Application {
         //main scene
         ScrollPane courseScrollbar = new ScrollPane();
         BorderPane mainPane = new BorderPane(courseScrollbar);
-        courseScene = new Scene(mainPane, 300, 250);
+        courseScene = new Scene(mainPane, 350, 250);
 
         HBox menuPane = new HBox(10);
         Region menuSpacer = new Region();
@@ -219,19 +215,13 @@ public class JarjestelmaUi extends Application {
             courseService.logout();
             primaryStage.setScene(loginScene);
         });
-        
-        Button finishedCoursesButton = new Button("Course page");
-        
-        finishedCoursesButton.setOnAction(e -> {
-            primaryStage.setScene(finishedCourseScene);
-        });
 
         HBox createForm = new HBox(25);
         Button createCourse = new Button("create");
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
         TextField newCourseInput = new TextField();
-        createForm.getChildren().addAll(spacer, newCourseInput, createCourse, finishedCoursesButton);
+        createForm.getChildren().addAll(spacer, newCourseInput, createCourse);
 
         courseNodes = new VBox(10);
         courseNodes.setMaxWidth(280);
@@ -248,33 +238,6 @@ public class JarjestelmaUi extends Application {
             redrawCourselist();
         });
         
-        // finishedCourseScene
-        ScrollPane courseScrollbar2 = new ScrollPane();
-        
-        BorderPane finishedPane = new BorderPane(courseScrollbar2);
-        finishedCourseScene = new Scene(finishedPane, 300, 350);
-        
-        finishedNodes = new VBox(10);
-        finishedNodes.setMaxWidth(280);
-        finishedNodes.setMinWidth(280);
-        redrawFinishedlist();
-        
-        courseScrollbar2.setContent(finishedNodes);
-        
-        HBox menuPane2 = new HBox(10);
-        Region menuSpacer2 = new Region();
-        HBox.setHgrow(menuSpacer2, Priority.ALWAYS);
-        Button logoutButton2 = new Button("log out");
-        menuPane2.getChildren().addAll(menuLabel2, menuSpacer2, logoutButton2);
-        
-        Button goToMainSceneButton = new Button("Home page");
-        goToMainSceneButton.setOnAction(e -> {
-            primaryStage.setScene(courseScene);
-        });
-        
-        finishedPane.setTop(menuPane2);
-        finishedPane.setBottom(goToMainSceneButton);
-
         primaryStage.setScene(loginScene);
         primaryStage.show();
     }
@@ -305,58 +268,24 @@ public class JarjestelmaUi extends Application {
     }
     
     /**
-     * päättyneen kurssin solmun luominen
-     * 
-     * @param course päättynyt kurssi
-     * 
-     * @return luodun päättyneen kurssin solmu
-     */
-    
-    public Node createFinishedNode(Course course) {
-        HBox box = new HBox(10);
-        Label label = new Label(course.getContent());
-        label.setMinHeight(28);
-        
-        box.getChildren().addAll((label));
-        
-        return box;
-    }
-    
-    /**
      * kurssien listaaminen
      */
     public void redrawCourselist() {
         courseNodes.getChildren().clear();
 
         List<Course> undoneCourses = courseService.getUnfinished();
+        System.out.println("unfinished");
 
         try {
             undoneCourses.forEach(course -> {
                 courseNodes.getChildren().add(createCourseNode(course));
             });
         } catch (Exception e) {
-            List<Course> undoneCourses2 = new ArrayList<>();
+            e.getCause();
         }
 
     }
-    
-    /**
-     * päättyneiden kurssien listaaminen
-     */
-    public void redrawFinishedlist() {
-        finishedNodes.getChildren().clear();
-        
-        List<Course> finishedCourses = courseService.getFinished();
-        
-        try {
-            finishedCourses.forEach(course -> {
-                finishedNodes.getChildren().add(createFinishedNode(course));
-            });
-        } catch (Exception e) {
-            List<Course> finishedCourses2 = new ArrayList<>();
-        }
-    }
-    
+   
     /**
      * viesti kun sovellus sulkeutuu
      */

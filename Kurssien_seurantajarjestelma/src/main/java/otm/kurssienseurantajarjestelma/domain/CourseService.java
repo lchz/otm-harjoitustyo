@@ -129,7 +129,7 @@ public class CourseService {
         return courseDao.getAll()
                 .stream()
                 .filter(c -> c.getUser().getUsername().equals(loggedIn.getUsername()))
-                .filter(c -> !c.isFinished())
+                .filter(c -> c.isFinished() == false)
                 .collect(Collectors.toList());
     }
     
@@ -139,25 +139,28 @@ public class CourseService {
      * @return kirjautuneen käyttäjän käynyt kurssit 
      */
     public List<Course> getFinished() {
+        
         if (loggedIn == null) {
+            System.out.println("111111");
             return new ArrayList<>();
         }
 
         if (courseDao.getAll().isEmpty()) {
+            System.out.println("22222");
             return new ArrayList<>();
         }
 
         return courseDao.getAll()
                 .stream()
                 .filter(c -> c.getUser().getUsername().equals(loggedIn.getUsername()))
-                .filter(c -> c.isFinished())
+                .filter(c -> c.isFinished() == true)
                 .collect(Collectors.toList());
     }
 
     /**
      * kurssin merkitsminen päätydyksi
      *
-     * @param id päätydyksi merkittävän kurssin tunniste
+     * @param id päättyneeksi merkittävän kurssin tunniste
      */
     public void markFinished(int id) {
         
