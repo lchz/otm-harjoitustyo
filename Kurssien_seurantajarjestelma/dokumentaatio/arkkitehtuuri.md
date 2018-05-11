@@ -68,6 +68,31 @@ CourseServicen ja ohjelman muiden osien suhdetta kuvaava luokka/pakkauskaavio:
 Pakkauksen _otm.kurssienseurantajarjestelma.dao_ luokat _FileCourseDao_ ja 
 _FileUserDao_ huolehtivat tietojen tallettamisesta tiedostoihin.
 
+### Tiedostot
+
+Sovellus tallettaa käyttäjien ja kurssien tiedot erillisiin tiedostoihin.
+
+Sovelluksen juureen sijoitettu [config.properties](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/config.properties)
+määrittelee tiedostojen nimet.
+
+Sovellus tallettaa käyttäjät seuraavassa formaatissa
+
+	1; Sincan Suomi; sincan; sincan@365.com; sincan123
+	2; Susanna Seppä; susan; susan@126.com; susan639
+
+eli kentät on eroteltu puolipistein. Ensimmäisenä käyttäjän tunniste eli id, 
+toisena käyttäjän nimi, kolmantena käyttäjätunnus, neljäntenä sähköposti ja 
+viimeisenä salasana.
+
+Käyttäjien kurssit tallettavan tiedoston formaatti on seuraava
+
+	1; matikka; false; sincan; Sincan Suomi
+	2; digitaidot; true; susan; Susanna Seppä
+
+Kentät on eroteltu puolistein. Ensimmäisenä kurssin tunniste eli id, 
+toisena kurssin nimi, komantena tieto siitä onko kurssi jo suoritettu ja 
+viimeisinä käyttäjän tiedot. 
+
 ### Päätoiminnallisuudet
 
 Kuvataan seuraavaksi sovelluksen toimintalogiikka muutaman 
