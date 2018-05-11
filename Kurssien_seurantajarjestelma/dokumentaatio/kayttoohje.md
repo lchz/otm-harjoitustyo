@@ -13,7 +13,7 @@ Ohjelma olettaa, että sen käynnistyshakemistossa on konfiguraatiotiedosto conf
 
 Ohjelma käynnistetään komennolla
 
-	java -jar Kurssien_seurantajarjestelma.jar
+	java -jar kurssienseurantajarjestelma-1.0-SNAPSHOT.jar
 
 ## Kirjautuminen
 
