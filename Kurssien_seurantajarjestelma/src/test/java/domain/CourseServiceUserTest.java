@@ -52,4 +52,26 @@ public class CourseServiceUserTest {
         
         assertEquals(null, service.getLoggedUser());
     }
+    
+    @Test
+    public void userCreationFailsIfNameNotUnique() throws Exception {
+        boolean result = service.createUser("Nick", "Neo", "neo@126.com", "Neo123");
+        boolean result2 = service.createUser("Neo", "Nikolas", "nick@126.com", "nick123");
+        
+        assertFalse(result);
+        assertFalse(result2);
+        
+    }
+    
+    @Test
+    public void succesfullyCreatedUserCanLogIn() throws Exception{
+        boolean result = service.createUser("Susanna", "Susanna", "susa@126.com", "susa123");
+        assertTrue(result);
+        
+        boolean canLogin = service.login("Susanna", "susa123");
+        assertTrue(canLogin);
+        
+        User loggedIn = service.getLoggedUser();
+        assertEquals("Susanna", loggedIn.getName());
+    }
 }
