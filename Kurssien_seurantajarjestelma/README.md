@@ -16,7 +16,9 @@ Sovelluksen avulla käyttäjien on mahdollista pitää kirjaa päättymättömis
 
 ## Releaset
 
-[Kurssien_seurantajarjestelma-app](https://github.com/lchz/otm-harjoitustyo/releases/tag/v0.5-alpha)
+loppupalautus
+
+[Kurssien_seurantajarjestelma-app](https://github.com/lchz/otm-harjoitustyo/releases/tag/v1.0)
 
 ## Komentorivitoiminnot
 
