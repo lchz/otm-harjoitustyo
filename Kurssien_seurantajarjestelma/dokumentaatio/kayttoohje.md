@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa tiedosto [kurssien_seurantajarjestelma.jar](https://github.com/lchz/otm-harjoitustyo/releases)
+Lataa tiedosto [kurssien_seurantajarjestelma.jar](https://github.com/lchz/otm-harjoitustyo/releases/tag/v1.0)
 
 ## Konfigurointi
 
