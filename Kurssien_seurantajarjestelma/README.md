@@ -10,7 +10,7 @@ Sovelluksen avulla käyttäjien on mahdollista pitää kirjaa päättymättömis
 
 [Käyttöohje](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/kayttoohje.md)
 
-[Testikattavuus](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/kuvat/Testikattavuus6.png)
+[Testikattavuus](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/kuvat/testikattavuus.png)
 
 [Arkkitehtuurikuvaus](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/arkkitehtuuri.md)
 
