@@ -141,12 +141,10 @@ public class CourseService {
     public List<Course> getFinished() {
         
         if (loggedIn == null) {
-            System.out.println("111111");
             return new ArrayList<>();
         }
 
         if (courseDao.getAll().isEmpty()) {
-            System.out.println("22222");
             return new ArrayList<>();
         }
 

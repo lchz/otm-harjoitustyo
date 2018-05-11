@@ -274,7 +274,6 @@ public class JarjestelmaUi extends Application {
         courseNodes.getChildren().clear();
 
         List<Course> undoneCourses = courseService.getUnfinished();
-        System.out.println("unfinished");
 
         try {
             undoneCourses.forEach(course -> {
