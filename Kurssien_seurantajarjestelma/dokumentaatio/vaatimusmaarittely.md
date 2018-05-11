@@ -11,7 +11,7 @@ Alkuvaiheessa sovelluksella on ainoastaan yksi käyttäjärooli eli _opiskelija_
 
 Sovellus koostuu neljästä eri näkymästä
 
-![kuva käyttöliittymäluonnoksesta](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/kuvat/kayttoliittymaluonnos.jpg)
+![kuva käyttöliittymäluonnoksesta](https://github.com/lchz/otm-harjoitustyo/blob/master/Kurssien_seurantajarjestelma/dokumentaatio/kuvat/vaatimusmaarittely.jpg)
 
 Sovellus aukeaa kirjautumisnäkymään, josta on mahdollista siirtyä uuden käyttäjän luomisnäkymään, onnistuneen kirjautumisen yhteydessä kirjaantuneen käyttäjän kurssilistaan, tai kaytyjen kurssien näkymään. 
 
@@ -21,11 +21,11 @@ Sovellus aukeaa kirjautumisnäkymään, josta on mahdollista siirtyä uuden käy
 
 * käyttäjä voi luoda järjestelmään käyttäjätunnuksen
   * käyttäjätunnuksen täytyy olla uniikki, jonka pituus on vähintään 3 merkkiä. Siihen ei saa sisältyä erikoismerkkejä eikä ääkkösiä.
-  * käyttäjätunnuksen yhteydessä pitää luoda salasana pituudeltaan vähintään 6 merkkiä. Salasanan täytyy sisältää aakkosia, numeroita sekä erikoismerkkejä, muttei ääkkösiä.
+  * käyttäjätunnuksen yhteydessä pitää luoda salasana pituudeltaan vähintään 6 merkkiä ilman ääkkösiä.
   * Lisäksi käyttäjällä pitää rekisteröidä käyttökelpoinen sähköposti
 
 * käyttäjä voi kirjautua järjestelmään
-  * kirjautuminen onnistuu syöttämällä olemassaoleva käyttäjätunnus tai sähköposti ja salasana kirjautumislomakkeelle
+  * kirjautuminen onnistuu syöttämällä olemassaoleva käyttäjätunnus ja salasana kirjautumislomakkeelle
   * jos käyttäjää ei ole olemassa, ilmoittaa järjestelmä tästä
 
 ### Kirjautumisen jälkeen
@@ -35,9 +35,7 @@ Sovellus aukeaa kirjautumisnäkymään, josta on mahdollista siirtyä uuden käy
 * käyttäjä voi lisätä uuden kurssin
   * luotu kurssi näkyy ainoastaan sen luoneelle käyttäjälle
 
-* käyttäjä voi merkitä kurssin päädytyksi, jolloin kurssi häviää listalta
-
-* käyttäjä voi tarkastaa kurssit, mitkä on käyty.
+* käyttäjä voi merkitä kurssin päätyneeksi, jolloin kurssi häviää listalta
 
 *  kättäjä voi kirjautua ulos järjstelmästä
 
@@ -45,7 +43,7 @@ Sovellus aukeaa kirjautumisnäkymään, josta on mahdollista siirtyä uuden käy
 
 Perusversion jälkeen järjestelmää täydennetään mahdollisesti seuraavilla toiminnallisuuksilla
 
-  * päätydyksi merkittyjen kurssien merkkaaminen käymättömiksi
+  * päätyneeksi merkittyjen kurssien merkkaaminen käymättömiksi
   * kurssien tietojen editointi
   * kurssien järjestely tärkeysjärjestykseen
   * kurssien määrittely muille käyttäjille
